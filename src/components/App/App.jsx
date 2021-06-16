@@ -2,11 +2,7 @@ import React from 'react';
 import Providers from '../Providers/Providers';
 
 const App = () => {
-    return (
-        <Providers>
-            <div>Hello world!</div>
-        </Providers>
-    );
+    return <Providers />;
 };
 
 export default App;

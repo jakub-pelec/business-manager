@@ -3,6 +3,7 @@
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "rules": {
         "import/no-anonymous-default-export": 0,
-        "react/prop-types": 0
+        "react/prop-types": 0,
+        "react/display-name": 0
     }
 }

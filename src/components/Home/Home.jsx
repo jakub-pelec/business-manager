@@ -1,7 +1,8 @@
 import React from 'react';
+import Sidebar from '../Navigation/Navigation';
 
 const Home = () => {
-    return <div>Hello world</div>;
+    return <Sidebar />;
 };
 
 export default Home;

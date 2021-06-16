@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from '../../schema/loginSchema';
 import Input from '../../shared/Input/Input';
+import Header from '../../shared/Header/Header';
 import { login } from '../../actions/actions';
 
 const LoginPage = ({ login: loginProps, history: { push } }) => {
@@ -24,29 +25,33 @@ const LoginPage = ({ login: loginProps, history: { push } }) => {
 
     return (
         <div className={classes.container}>
-            <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    muiInputProps={{
-                        type: 'text',
-                        placeholder: 'email',
-                        ...register('email'),
-                        fullWidth: true,
-                    }}
-                    validationError={errors.email}
-                />
-                <Input
-                    muiInputProps={{
-                        placeholder: 'password',
-                        type: 'password',
-                        ...register('password'),
-                        fullWidth: true,
-                    }}
-                    validationError={errors.password}
-                />
-                <Button type="submit" variant="contained" color="primary">
-                    Login
-                </Button>
-            </form>
+            <div className={classes.content}>
+                <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+                    <Header>Log in</Header>
+                    <Input
+                        muiInputProps={{
+                            type: 'text',
+                            placeholder: 'email',
+                            ...register('email'),
+                            fullWidth: true,
+                        }}
+                        validationError={errors.email}
+                    />
+                    <Input
+                        muiInputProps={{
+                            placeholder: 'password',
+                            type: 'password',
+                            ...register('password'),
+                            fullWidth: true,
+                        }}
+                        validationError={errors.password}
+                    />
+                    <Button type="submit" variant="contained" color="primary">
+                        Login
+                    </Button>
+                </form>
+
+            </div>
         </div>
     );
 };

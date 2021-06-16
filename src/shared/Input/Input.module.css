@@ -4,7 +4,7 @@
 }
 
 .error {
-    color: 'red';
+    color: var(--color-red);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -13,4 +13,5 @@
 
 .input {
     padding: 5%;
+    color: var(--color-secondary-text);
 }

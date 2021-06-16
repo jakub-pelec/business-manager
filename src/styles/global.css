@@ -1,12 +1,20 @@
+:root {
+    --color-red: #ff2e2e;
+    --color-primary-background: #002863;
+    --color-primary-text: #bfbfbf;
+    --color-secondary-text: #525252;
+    --color-secondary-background: #ebebeb;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', 'sans-serif';
 }
 
 #root {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Providers from '../Providers/Providers';
 
 const App = () => {
     return (
-        <div>
-            Hello world!
-        </div>
-    )
-}
+        <Providers>
+            <div>Hello world!</div>
+        </Providers>
+    );
+};
 
-export default App
+export default App;

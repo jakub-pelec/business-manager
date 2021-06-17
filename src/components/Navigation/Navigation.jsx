@@ -152,7 +152,7 @@ const Navigation = () => {
                             <ListItem button key={text}>
                                 <ListItemIcon>
                                     <Component />
-                                
+
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
                             </ListItem>

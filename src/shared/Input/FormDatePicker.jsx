@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Controller } from 'react-hook-form';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 
-const FormDatePicker = ({ register, value, name, setValue }) => {
-    const [date, setDate] = useState(null);
-
-    useEffect(() => {
-        register(name);
-    }, [register]);
-
-    useEffect(() => {
-        setDate(value || null);
-    }, [setDate, value]);
-
+const FormDatePicker = ({ name, control }) => {
     return (
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker value={date} onChange={(date) => setValue(name, date, { shouldValidate: true, shouldDirty: true })} />
-        </MuiPickersUtilsProvider>
+        <Controller
+            control={control}
+            name={name}
+            render={({ field }) => (
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <KeyboardDatePicker {...field}/>
+                </MuiPickersUtilsProvider>
+            )}
+        />
     );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Input from '../../shared/Input/Input';
 import FormCheckBox from '../../shared/Input/FormCheckBox';
 import FormDatePicker from '../../shared/Input/FormDatePicker';
@@ -16,11 +16,8 @@ const InvoiceForm = () => {
         register,
         handleSubmit,
         formState: { errors },
-        setValue,
         control,
-        getValues,
     } = useForm({
-        mode: 'onSubmit',
         resolver: yupResolver(invoiceFormSchema),
     });
 
@@ -30,10 +27,6 @@ const InvoiceForm = () => {
         console.log({ name, contractorName, value, formattedDate, settled, file });
         console.log('dupa');
     };
-
-    useEffect(() => {
-        console.log(getValues());
-    }, [errors]);
 
     return (
         <div>
@@ -66,12 +59,9 @@ const InvoiceForm = () => {
                     }}
                     validationError={errors.value}
                 />
-                <FormDatePicker register={register} value={getValues().date} name="date" setValue={setValue} />
-
-                <FormCheckBox name="settled" label="settled" value={getValues().settled} register={register} setValue={setValue} />
-
+                <FormDatePicker name="date" control={control} />
+                <FormCheckBox name="settled" control={control} label='Settled' />
                 <FormDropzoneArea name="file" control={control} />
-
                 <Button type="submit" variant="contained" color="primary">
                     Submit form
                 </Button>

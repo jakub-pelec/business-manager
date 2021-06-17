@@ -5,7 +5,7 @@ import { Controller } from 'react-hook-form';
 const FormDropzoneArea = ({ name, control }) => {
     return (
         <Controller
-            render={({ field: { onChange } }) => <DropzoneArea onChange={(files) => onChange(files[0])} />}
+            render={({ field }) => <DropzoneArea {...field} onChange={(files) => field.onChange(files[0])} />}
             name={name}
             control={control}
             rules={{ required: true }}
